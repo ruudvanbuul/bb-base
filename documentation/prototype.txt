@@ -1,0 +1,23 @@
+### Framework:
+
+Laravel
+
+### Packages:
+
+List Of Developer Tools (https://github.com/percymamedy/laravel-dev-tools)
+
+Debugbar | barryvdh/laravel-debugbar --dev (https://github.com/barryvdh/laravel-debugbar)
+Logviewer | rap2hpoutre/laravel-log-viewer --dev (https://github.com/rap2hpoutre/laravel-log-viewer)
+IDE Helper for autocompletion etc. | barryvdh/laravel-ide-helper --dev (https://github.com/barryvdh/laravel-ide-helper)
+
+### Options
+
+Permissions:
+
+spatie/laravel-permission (https://github.com/spatie/laravel-permission#installation)
+silber/bouncer (https://github.com/JosephSilber/bouncer)
+santigarcor/laratrust (https://github.com/santigarcor/laratrust)
+
+Files & Media:
+
+(https://github.com/spatie/laravel-medialibrary)
