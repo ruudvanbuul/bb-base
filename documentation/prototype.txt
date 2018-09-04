@@ -1,23 +1,119 @@
+### General:
+
+--- PHP:
+
+Coding Standard Fixer (https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+PHP Static Analyzer (https://github.com/phpstan/phpstan)
+
+--- Design Patterns:
+
+Design Patterns: Elements of Reusable Object-Oriented Software (Book)
+Patterns of Enterprise Application Architecture (Book)
+
 ### Framework:
 
 Laravel
 
+A curated list of bookmarks, packages, tutorials, videos and other cool resources from the Laravel ecosystem (https://github.com/chiraggude/awesome-laravel)
+Best practices (https://github.com/alexeymezenin/laravel-best-practices#single-responsibility-principle) (http://www.laravelbestpractices.com/#coding_practices)
+
+Apiato
+
+API Framework based on laravel (https://github.com/apiato/apiato) (https://github.com/apiato/awesome-apiato)
+
+API Platform
+
+API Framework based on Symfony, GraphQL, etc. (https://api-platform.com/)
+
 ### Packages:
+
+--- Dev Environments:
+Homestead (https://laravel.com/docs/5.6/homestead)
+Valet (https://laravel.com/docs/5.6/valet) (https://github.com/weprovide/valet-plus) (https://cpriego.github.io/valet-linux/)
+
+--- Dev Tools:
 
 List Of Developer Tools (https://github.com/percymamedy/laravel-dev-tools)
 
 Debugbar | barryvdh/laravel-debugbar --dev (https://github.com/barryvdh/laravel-debugbar)
 Logviewer | rap2hpoutre/laravel-log-viewer --dev (https://github.com/rap2hpoutre/laravel-log-viewer)
 IDE Helper for autocompletion etc. | barryvdh/laravel-ide-helper --dev (https://github.com/barryvdh/laravel-ide-helper)
+Extended Generators | laracasts/generators --dev (https://github.com/laracasts/Laravel-5-Generators-Extended)
+Test Factory generator | mpociot/laravel-test-factory-helper --dev (https://github.com/mpociot/laravel-test-factory-helper)
+
+### Design Patterns
+
+Design Patterns Explained (https://sourcemaking.com/design_patterns)
+Common design patterns for Symfony (https://stackoverflow.com/questions/37154101/symfony-project-design-pattern)
+Architecture Patterns (http://andrzejonsoftware.blogspot.com/2013/12/the-four-architectures-that-will.html) (https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013)
+
+--- Dependency Injection:
+
+Info (https://laravel.com/docs/5.6/container) (http://fabien.potencier.org/what-is-dependency-injection.html)
+
+--- Domain Driven Design and Repositories:
+
+What is business logic (https://softwareengineering.stackexchange.com/questions/234251/what-really-is-the-business-logic) (https://en.wikipedia.org/wiki/Business_logic)
+Domain Driven Design (https://en.wikipedia.org/wiki/Domain-driven_design) (https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/) (https://www.petrikainulainen.net/software-development/design/thefive-characteristics-of-a-good-domain-model/) (https://stackoverflow.com/questions/19935773/dao-repositories-and-services-in-ddd)
+Anemic Domain Model, What we don't want (https://martinfowler.com/bliki/AnemicDomainModel.html)
+Data Mapper Pattern (https://en.wikipedia.org/wiki/Data_mapper_pattern)
+Unit of Work Pattern ()
+To repository or not repository? (http://shawnmc.cool/the-repository-pattern) (https://medium.com/@nicklee1/why-the-repository-pattern-is-often-misunderstood-in-the-laravel-community-e840780499f2) (https://bosnadev.com/2015/03/07/using-repository-pattern-in-laravel-5/?utm_source=prettus-l5-repository&utm_medium=readme&utm_campaign=prettus-l5-repository) (https://laracasts.com/lessons/repositories-simplified) (https://github.com/andersao/l5-repository)
+Command Query Responsibility Segregation (https://martinfowler.com/bliki/CQRS.html)
+SOLID (https://en.wikipedia.org/wiki/SOLID)
+GRASP (https://en.wikipedia.org/wiki/GRASP_(object-oriented_design))
+Multi-tear Architecture (https://en.wikipedia.org/wiki/Multitier_architecture)
+DDD Symfony example (https://williamdurand.fr/2013/08/07/ddd-with-symfony2-folder-structure-and-code-first/)
+
+Discussions on pitfalls of Laravel (https://www.reddit.com/r/PHP/comments/6eui3z/discussion_why_isnt_laravel_suitable_for/) (https://carnage.github.io/2017/02/laravel)
+Facades and Eloquent (AR) main "problem", Facades should only be in Framework layers not in BL, Dependency Injection and Model Injection necessary for good unit testing (https://www.reddit.com/r/PHP/comments/3bmclk/why_experienced_developers_consider_laravel_as_a/)
+Comparison between Symfony and Laravel (https://www.toptal.com/php/choosing-between-symfony-and-laravel-frameworks) (https://www.reddit.com/r/PHP/comments/2kabck/why_does_it_seem_like_more_experienced_developers/) (https://medium.com/wdstack/laravel-vs-symfony-clash-of-the-frameworks-ed1e28424bc8)
+
+--- Porto SAP:
+
+Porto Architectural Pattern (https://github.com/Mahmoudz/Porto#Containers-Layer)
 
 ### Options
 
-Permissions:
+--- ORM:
+
+Should we use an Active Record (AR) or Data Mapper (DM) ORM? (https://www.culttt.com/2014/06/18/whats-difference-active-record-data-mapper/) (https://pressupinc.com/blog/2014/11/orm-patterns-active-record-data-mapper/)
+
+Eloquent AR (https://laravel-news.com/eloquent-tips-tricks)
+Doctrine DM ()
+
+--- Behaviors and Traits:
+
+Eloquent Extensions (https://github.com/jarektkaczyk/eloquence) (https://github.com/kirkbushell/eloquence)
+Model Validation (https://github.com/dwightwatson/validating)
+
+--- Search Engine:
+
+Should we use SOLR or Elasticsearch as our search engine? (https://logz.io/blog/solr-vs-elasticsearch/)
+
+Elasticsearch:
+https://github.com/elasticquent/Elasticquent
+https://github.com/basemkhirat/elasticsearch
+https://github.com/cviebrock/laravel-elasticsearch
+
+--- Permissions:
 
 spatie/laravel-permission (https://github.com/spatie/laravel-permission#installation)
 silber/bouncer (https://github.com/JosephSilber/bouncer)
 santigarcor/laratrust (https://github.com/santigarcor/laratrust)
 
-Files & Media:
+--- Files & Media:
 
 (https://github.com/spatie/laravel-medialibrary)
+
+--- Modules:
+Grouping components in modules (https://nwidart.com/laravel-modules/v3/introduction)
+
+--- Admin & Scaffold Tools:
+Backpack (https://backpackforlaravel.com/) (https://github.com/Laravel-Backpack)
+Laravel Generator (http://labs.infyom.com/laravelgenerator/)
+Grafite Builder (https://builder.grafite.ca/) (https://github.com/GrafiteInc/Builder)
+Laravel Nova (https://nova.laravel.com/)
+
+--- CMS:
+Asgard vs October (https://www.cloudways.com/blog/asgardcms-vs-octobercms/)
