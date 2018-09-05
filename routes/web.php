@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PropertyController@index');
+Route::get('/{id}', 'PropertyController@show');
+Route::get('/add/{id}', 'PropertyController@create');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
