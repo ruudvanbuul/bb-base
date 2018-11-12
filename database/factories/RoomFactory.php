@@ -1,7 +1,7 @@
 <?php
 
+use App\BB\Entities\Room;
 use Faker\Generator as Faker;
-use \App\BB\Entities\Room;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +17,6 @@ use \App\BB\Entities\Room;
 $factory->define(Room::class, function (Faker $faker) {
     return [
         'name' => $faker->colorName,
+        'price' => $faker->numberBetween(1000, 10000),
     ];
 });

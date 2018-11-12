@@ -2,7 +2,9 @@
 
 namespace App\BB\Entities;
 
-class Location
+use App\BB\Entity;
+
+class Location extends Entity
 {
     /**
      * @var int
@@ -15,19 +17,9 @@ class Location
     protected $address;
 
     /**
-     * @var string
+     * @var City
      */
     protected $city;
-
-    /**
-     * @var string
-     */
-    protected $region;
-
-    /**
-     * @var string
-     */
-    protected $country;
 
     /**
      * @var Property
@@ -35,44 +27,71 @@ class Location
     protected $property;
 
     /**
-     * @param $address
+     * @param array $properties The properties for the object
+     * @param Property $property
+     * @param City city
      */
-    public function __construct($address)
+    public function __construct(array $properties, Property &$property, City &$city)
     {
-        $this->address = $address;
+        parent::__construct($properties);
+
+        $this->property = $property;
+        $this->city = $city;
     }
 
-    public function getId()
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getAddress()
+    /**
+     * @return string
+     */
+    public function getAddress(): string
     {
         return $this->address;
     }
 
-    public function getCity()
+    /**
+     * @return array
+     */
+    public function getCity(): array
     {
-        return $this->city;
+        return [
+            'id' => $this->city->getId(),
+            'name' => $this->city->getName(),
+        ];
     }
 
-    public function getRegion()
+    /**
+     * @return array
+     */
+    public function getCountry(): array
     {
-        return $this->region;
+        return [
+            'id' => $this->city->getCountry()->getId(),
+            'name' => $this->city->getCountry()->getName(),
+        ];
     }
 
-    public function getCountry()
+    /**
+     * @param Property $property
+     * @return self
+     */
+    public function setProperty(Property $property): self
     {
-        return $this->country;
+        $this->property = $property;
+
+        return $this;
     }
 
-    public function setProperty(Property $property)
-    {
-        return $this->property = $property;
-    }
-
-    public function getProperty()
+    /**
+     * @return Property
+     */
+    public function getProperty(): Property
     {
         return $this->property;
     }

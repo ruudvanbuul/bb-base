@@ -1,6 +1,7 @@
 <?php
 namespace App\Doctrine\Mappings;
 
+use App\BB\Entities\City;
 use App\BB\Entities\Property;
 use App\BB\Entities\Location;
 use LaravelDoctrine\Fluent\EntityMapping;
@@ -27,6 +28,7 @@ class LocationMapping extends EntityMapping
     {
         $builder->increments('id');
         $builder->string('address');
+        $builder->belongsTo(City::class)->fetchEager();
         $builder->belongsTo(Property::class);
     }
 }

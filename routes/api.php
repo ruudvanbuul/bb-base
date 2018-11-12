@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/', 'PropertyController@index');
+Route::get('/{id}', 'PropertyController@show');
+Route::get('/find/{name}', 'PropertyController@find');
+Route::get('/add/{name}', 'PropertyController@create');
+Route::get('/del/{id}', 'PropertyController@destroy');

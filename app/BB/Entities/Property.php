@@ -2,10 +2,12 @@
 
 namespace App\BB\Entities;
 
+use App\BB\Entity;
+use App\BB\ValueObjects\Range;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Property
+class Property extends Entity
 {
     /**
      * @var int
@@ -28,46 +30,82 @@ class Property
     protected $rooms;
 
     /**
-     * @param $name
+     * @param array $properties The properties for the object
      */
-    public function __construct($name)
+    public function __construct(array $properties)
     {
-        $this->name = $name;
+        parent::__construct($properties);
 
-        $this->rooms = new ArrayCollection;
+        if (!$this->rooms instanceof Collection) {
+            $this->rooms = new ArrayCollection;
+        }
     }
 
-    public function getId()
+    /**
+     * @return int
+     */
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function setLocation(Location $location)
+    /**
+     * @param Location $location
+     * @return self
+     */
+    public function setLocation(Location $location) : self
     {
         $location->setProperty($this);
         $this->location = $location;
+
+        return $this;
     }
 
-    public function getLocation()
+    /**
+     * @return Location
+     */
+    public function getLocation() : Location
     {
         return $this->location;
     }
 
-    public function addRoom(Room $room)
+    /**
+     * @return Range
+     */
+    public function getPriceRange() : Range
     {
-        if(!$this->rooms->contains($room)) {
-            $room->setProperty($this);
-            $this->rooms->add($room);
-        }
+        return new Range($this->rooms->first()->getPrice(), $this->rooms->last()->getPrice());
     }
 
-    public function getRooms()
+    /**
+     * @param Room $room
+     * @return bool
+     */
+    public function addRoom(Room $room) : bool
     {
-        return $this->rooms->toArray();
+        if (!$this->rooms->contains($room)) {
+            $room->setProperty($this);
+            $this->rooms->add($room);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @return Collection|Room[]
+     */
+    public function getRooms() : Collection
+    {
+        return $this->rooms;
     }
 }

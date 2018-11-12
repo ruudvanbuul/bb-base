@@ -1,14 +1,12 @@
 <?php
-
 namespace App\Doctrine\Mappings;
 
-use App\BB\Entities\Property;
-use App\BB\Entities\Location;
-use App\BB\Entities\Room;
+use App\BB\Entities\Country;
+use App\BB\Entities\City;
 use LaravelDoctrine\Fluent\EntityMapping;
 use LaravelDoctrine\Fluent\Fluent;
 
-class PropertyMapping extends EntityMapping
+class CountryMapping extends EntityMapping
 {
     /**
      * Returns the fully qualified name of the class that this mapper maps.
@@ -17,7 +15,7 @@ class PropertyMapping extends EntityMapping
      */
     public function mapFor()
     {
-        return Property::class;
+        return Country::class;
     }
 
     /**
@@ -28,15 +26,12 @@ class PropertyMapping extends EntityMapping
     public function map(Fluent $builder)
     {
         $builder->increments('id');
+        $builder->string('code');
         $builder->string('name');
-        $builder->hasOne(Location::class)
-            ->mappedBy('property')
+        $builder->hasMany(City::class)
+            ->mappedBy('country')
+            ->orderBy('name')
             ->cascadeAll()
-            ->fetchEager();
-        $builder->hasMany(Room::class)
-            ->mappedBy('property')
-            ->orderBy('price')
-            ->cascadeAll()
-            ->fetchEager();
+            ->fetchExtraLazy();
     }
 }

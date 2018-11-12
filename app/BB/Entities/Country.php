@@ -2,7 +2,10 @@
 
 namespace App\BB\Entities;
 
-class Country
+use App\BB\Entity;
+use Doctrine\Common\Collections\Collection;
+
+class Country extends Entity
 {
     /**
      * @var int
@@ -12,33 +15,47 @@ class Country
     /**
      * @var string
      */
+    protected $code;
+
+    /**
+     * @var string
+     */
     protected $name;
 
     /**
-     * @var Region
+     * @return Collection|City[]
      */
-    protected $regions;
+    protected $cities;
 
     /**
-     * @param $name
+     * @return int
      */
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getCode() : string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function getRegions()
+    /**
+     * @return Collection|City[]
+     */
+    public function getCities() : Collection
     {
-        return $this->regions;
+        return $this->cities;
     }
 }

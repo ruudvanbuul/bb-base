@@ -33,6 +33,8 @@ return [
                 App\Doctrine\Mappings\PropertyMapping::class,
                 App\Doctrine\Mappings\RoomMapping::class,
                 App\Doctrine\Mappings\LocationMapping::class,
+                App\Doctrine\Mappings\CityMapping::class,
+                App\Doctrine\Mappings\CountryMapping::class,
             ],
             'repository'    => Doctrine\ORM\EntityRepository::class,
             'proxies'       => [

@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-09-05 06:28:23.
+    * Generated on 2018-10-31 06:32:43.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13,6 +13,7 @@ namespace PHPSTORM_META {
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -164,6 +165,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -315,6 +317,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -466,6 +469,7 @@ namespace PHPSTORM_META {
     override(\App::make(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -617,6 +621,7 @@ namespace PHPSTORM_META {
     override(\App::makeWith(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -768,6 +773,7 @@ namespace PHPSTORM_META {
     override(\app(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -919,6 +925,7 @@ namespace PHPSTORM_META {
     override(\resolve(0), map([
         '' => '@',
         'App\BB\Repositories\PropertyRepository' => \App\Repositories\DoctrinePropertyRepository::class,
+        'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Doctrine\ORM\Mapping\ClassMetadataFactory' => \LaravelDoctrine\Fluent\Extensions\ExtensibleClassMetadataFactory::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,

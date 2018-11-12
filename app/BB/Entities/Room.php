@@ -2,7 +2,9 @@
 
 namespace App\BB\Entities;
 
-class Room
+use App\BB\Entity;
+
+class Room extends Entity
 {
     /**
      * @var int
@@ -15,34 +17,54 @@ class Room
     protected $name;
 
     /**
+     * @var int
+     */
+    protected $price;
+
+    /**
      * @var Property
      */
     protected $property;
 
     /**
-     * @param $name
+     * @return int
      */
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function setProperty(Property $property)
+    /**
+     * @return int
+     */
+    public function getPrice() : int
     {
-        return $this->property = $property;
+        return $this->price;
     }
 
-    public function getProperty()
+    /**
+     * @param Property $property
+     * @return self
+     */
+    public function setProperty(Property $property) : self
+    {
+        $this->property = $property;
+
+        return $this;
+    }
+
+    /**
+     * @return Property
+     */
+    public function getProperty() : Property
     {
         return $this->property;
     }

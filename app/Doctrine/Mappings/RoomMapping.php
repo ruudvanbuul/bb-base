@@ -27,6 +27,7 @@ class RoomMapping extends EntityMapping
     {
         $builder->increments('id');
         $builder->string('name');
+        $builder->integer('price');
         $builder->belongsTo(Property::class);
     }
 }

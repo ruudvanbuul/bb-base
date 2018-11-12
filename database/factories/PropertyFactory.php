@@ -1,8 +1,7 @@
 <?php
 
+use App\BB\Entities\Property;
 use Faker\Generator as Faker;
-use \App\BB\Entities\Property;
-use \App\BB\Entities\Location;
 
 /*
 |--------------------------------------------------------------------------

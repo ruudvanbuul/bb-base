@@ -1,0 +1,2 @@
+It's not easy to decouple your domain from the Framework/ORM.
+If we want to accomplish this we need to spend time to really dive deep into structural design patterns like (DDD, Repositories, Unit Of Work, etc.)

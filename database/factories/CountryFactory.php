@@ -1,6 +1,6 @@
 <?php
 
-use App\BB\Entities\Location;
+use App\BB\Entities\Country;
 use Faker\Generator as Faker;
 
 /*
@@ -14,8 +14,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Location::class, function (Faker $faker) {
+$factory->define(Country::class, function (Faker $faker) {
     return [
-        'address' => $faker->streetAddress,
+        'code' => $faker->unique()->countryCode,
+        'name' => $faker->unique()->country,
     ];
 });

@@ -2,9 +2,10 @@
 
 namespace App\BB\Entities;
 
+use App\BB\Entity;
 use Doctrine\Common\Collections\Collection;
 
-class City
+class City extends Entity
 {
     /**
      * @var int
@@ -17,30 +18,55 @@ class City
     protected $name;
 
     /**
-     * @var Region
+     * @var Country
      */
-    protected $region;
+    protected $country;
 
     /**
-     * @param $name
+     * @var Collection|Location[]
      */
-    public function __construct($name)
+    protected $locations;
+
+    /**
+     * @param array $properties The properties for the object
+     * @param Country $country
+     */
+    public function __construct(array $properties, Country &$country)
     {
-        $this->name = $name;
+        parent::__construct($properties);
+
+        $this->country = country;
     }
 
-    public function getId()
+    /**
+     * @return int
+     */
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function getRegion()
+    /**
+     * @return Country
+     */
+    public function getCountry() : Country
     {
-        return $this->region;
+        return $this->country;
+    }
+
+    /**
+     * @return Collection|Location[]
+     */
+    public function getLocations() : Collection
+    {
+        return $this->locations;
     }
 }

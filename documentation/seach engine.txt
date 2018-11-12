@@ -1,0 +1,6 @@
+Use an interface or search bundle to abstract the search engine so this can be replaced if needed
+
+Elasticsearch
+Solr
+Algolia
+TNT Search

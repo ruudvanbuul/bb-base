@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BB\Entities\Property;
 use App\BB\Repositories\PropertyRepository;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class PropertyController extends Controller
 {
@@ -18,31 +19,42 @@ class PropertyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
-    public function index()
+    public function index(Request $request): Response
     {
-        dd($this->properties->all());
+        return $this->jsonResponse(
+            $request,
+            $this->processPagination(
+                $this->properties->all(
+                    $request->query('per_page')
+                        ? $request->query('per_page')
+                        : 10
+                )
+            ),
+            ['rooms', 'location.city.locations']
+        );
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @param string $name
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function create($name)
+    public function create($name): Response
     {
-        $this->properties->add(new Property($name));
+        return $this->properties->add(new Property(['name' => $name]));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -50,21 +62,34 @@ class PropertyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param  int $id
+     * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id): Response
     {
-        dd($this->properties->find($id)->getRooms());
+        return $this->jsonResponse($request, $this->properties->find($id));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Request $request
+     * @param string $name
+     * @return Response
+     */
+    public function find(Request $request, $name): Response
+    {
+        return $this->jsonResponse($request, $this->properties->findByName($name));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return Response
      */
-    public function edit($id)
+    public function edit($id): Response
     {
         //
     }
@@ -72,23 +97,27 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
+     * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): Response
     {
-        //
+        $property = $this->properties->find($id);
+        $property->setName($request->input('name'));
+
+        $this->properties->update($property);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param  int $id
+     * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id): Response
     {
-        //
+        return $this->jsonResponse($request, $this->properties->remove($id));
     }
 }

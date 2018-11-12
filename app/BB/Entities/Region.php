@@ -2,9 +2,10 @@
 
 namespace App\BB\Entities;
 
+use App\BB\Entity;
 use Doctrine\Common\Collections\Collection;
 
-class Region
+class Region extends Entity
 {
     /**
      * @var int
@@ -32,34 +33,41 @@ class Region
     protected $cities;
 
     /**
-     * @param $name
+     * @return int
      */
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function parentRegion()
+    /**
+     * @return Region
+     */
+    public function parentRegion() : Region
     {
         return $this->parentRegion;
     }
 
-    public function getRegions()
+    /**
+     * @return Collection|Region[]
+     */
+    public function getRegions() : Collection
     {
         return $this->regions;
     }
 
-    public function getCities()
+    /**
+     * @return Collection|City[]
+     */
+    public function getCities() : Collection
     {
         return $this->cities;
     }

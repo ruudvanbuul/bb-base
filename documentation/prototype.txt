@@ -57,12 +57,13 @@ What is business logic (https://softwareengineering.stackexchange.com/questions/
 Domain Driven Design (https://en.wikipedia.org/wiki/Domain-driven_design) (https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/) (https://www.petrikainulainen.net/software-development/design/thefive-characteristics-of-a-good-domain-model/) (https://stackoverflow.com/questions/19935773/dao-repositories-and-services-in-ddd)
 Anemic Domain Model, What we don't want (https://martinfowler.com/bliki/AnemicDomainModel.html)
 Data Mapper Pattern (https://en.wikipedia.org/wiki/Data_mapper_pattern)
-Unit of Work Pattern ()
+Unit of Work Pattern (https://www.youtube.com/watch?v=rtXpYpZdOzM&feature=youtu.be)
 To repository or not repository? (http://shawnmc.cool/the-repository-pattern) (https://medium.com/@nicklee1/why-the-repository-pattern-is-often-misunderstood-in-the-laravel-community-e840780499f2) (https://bosnadev.com/2015/03/07/using-repository-pattern-in-laravel-5/?utm_source=prettus-l5-repository&utm_medium=readme&utm_campaign=prettus-l5-repository) (https://laracasts.com/lessons/repositories-simplified) (https://github.com/andersao/l5-repository)
 Command Query Responsibility Segregation (https://martinfowler.com/bliki/CQRS.html)
 SOLID (https://en.wikipedia.org/wiki/SOLID)
 GRASP (https://en.wikipedia.org/wiki/GRASP_(object-oriented_design))
 Multi-tear Architecture (https://en.wikipedia.org/wiki/Multitier_architecture)
+Value Objects (https://www.ntaso.com/value-objects-laravel-eloquent/)
 DDD Symfony example (https://williamdurand.fr/2013/08/07/ddd-with-symfony2-folder-structure-and-code-first/)
 
 Discussions on pitfalls of Laravel (https://www.reddit.com/r/PHP/comments/6eui3z/discussion_why_isnt_laravel_suitable_for/) (https://carnage.github.io/2017/02/laravel)
@@ -77,7 +78,7 @@ Porto Architectural Pattern (https://github.com/Mahmoudz/Porto#Containers-Layer)
 
 --- ORM:
 
-Should we use an Active Record (AR) or Data Mapper (DM) ORM? (https://www.culttt.com/2014/06/18/whats-difference-active-record-data-mapper/) (https://pressupinc.com/blog/2014/11/orm-patterns-active-record-data-mapper/)
+Should we use an Active Record (AR) or Data Mapper (DM) ORM? (https://www.culttt.com/2014/07/07/doctrine-2-different-eloquent/) (https://www.culttt.com/2014/06/18/whats-difference-active-record-data-mapper/) (https://pressupinc.com/blog/2014/11/orm-patterns-active-record-data-mapper/)
 
 Eloquent AR (https://laravel-news.com/eloquent-tips-tricks)
 Doctrine DM ()
@@ -117,3 +118,7 @@ Laravel Nova (https://nova.laravel.com/)
 
 --- CMS:
 Asgard vs October (https://www.cloudways.com/blog/asgardcms-vs-octobercms/)
+
+--- GraphQL:
+https://speakerdeck.com/initialspark/ddd-12-goodbye-rest-hello-graphql?slide=47
+https://medium.freecodecamp.org/five-common-problems-in-graphql-apps-and-how-to-fix-them-ac74d37a293c

@@ -1,0 +1,4 @@
+tightly coupled to ORM
+no batch creating, updating and deleting (multiple queries)
+difficult to implement a REAL repository pattern
+missing unit of work possibilities (flushing in Service Layer)

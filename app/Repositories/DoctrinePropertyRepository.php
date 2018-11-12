@@ -4,43 +4,66 @@ namespace App\Repositories;
 
 use App\BB\Entities\Property;
 use App\BB\Repositories\PropertyRepository;
-use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\EntityRepository;
 use EntityManager;
-use Doctrine\Common\Persistence\ObjectRepository;
+use Exception;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use LaravelDoctrine\ORM\Pagination\PaginatesFromRequest;
 
 class DoctrinePropertyRepository implements PropertyRepository
 {
+    use PaginatesFromRequest;
+
     private $genericRepository;
 
-    public function __construct(ObjectRepository $genericRepository)
+    public function __construct(EntityRepository $genericRepository)
     {
         $this->genericRepository = $genericRepository;
     }
 
-    public function all() : array
+    public function createQueryBuilder($alias, $indexBy = null)
     {
-        return $this->genericRepository->findAll();
+        return $this->genericRepository->createQueryBuilder($alias, $indexBy);
     }
 
-    public function find($id) : Property
+    public function all(int $perPage) : LengthAwarePaginator
+    {
+        return $this->paginateAll($perPage);
+    }
+
+    public function find(int $id) : Property
     {
         return $this->genericRepository->find($id);
     }
 
-    public function findByName($name) : array
+    public function findByName(string $name) : array
     {
-        return $this->genericRepository->findBy(['name' => $name]);
+        return $this->genericRepository->createQueryBuilder('p')
+            ->where('p.name LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->getQuery()
+            ->getResult();
     }
 
-    public function add(Property $property)
+    public function add(Property $property) : bool
     {
-        EntityManager::persist($property);
-        EntityManager::flush();
+        try {
+            EntityManager::persist($property);
+            EntityManager::flush();
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
-    public function remove(Property $property)
+    public function remove(int $id) : bool
     {
-        EntityManager::remove($property);
-        EntityManager::flush();
+        try {
+            EntityManager::remove(EntityManager::getReference(Property::class, $id));
+            EntityManager::flush();
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 }

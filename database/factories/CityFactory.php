@@ -1,6 +1,6 @@
 <?php
 
-use App\BB\Entities\Location;
+use App\BB\Entities\City;
 use Faker\Generator as Faker;
 
 /*
@@ -14,8 +14,8 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Location::class, function (Faker $faker) {
+$factory->define(City::class, function (Faker $faker) {
     return [
-        'address' => $faker->streetAddress,
+        'name' => $faker->city,
     ];
 });
